@@ -5,7 +5,7 @@
 using namespace std;
 
 int main() {
-    ifstream is("C:\\Users\\Pepa Bobek\\Desktop\\advent2021\\01\\input.txt");
+    ifstream is("input.txt");
     istream_iterator<int> start(is), end;
     vector<int> input(start, end);
     int result=0,A,B;
