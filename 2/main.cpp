@@ -15,24 +15,16 @@ int main() {
     ifstream is("input.txt");
     vector<input_var> input;
     input_var tmp_input;
-    string line;
-    int depth=0, forward=0, aim=0;
-    string tmp="";
-    int q=0;
+    string line, tmp;
+    int depth=0, forward=0, aim=0, q;
     while(getline(is,line))
     {
-        while(line[q] != ' ')
-        {
-            tmp+=line[q];
-            q++;
-        }
+        tmp = "";
+        for(q=0; line[q] != ' '; q++)
+            tmp += line[q];
         tmp_input.command=tmp;
-        q++;
-        tmp="";
-
         tmp_input.value = stoi(line.substr(q));
         input.push_back(tmp_input);
-        q=0;
     }
 
     for(input_var i : input)
@@ -60,6 +52,5 @@ int main() {
         }
     }
     cout<<"Second star:"<<forward*depth<<endl;
-
     return 0;
 }
