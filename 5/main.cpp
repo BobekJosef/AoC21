@@ -151,7 +151,7 @@ int Star2(const input_t& input)
 
 int main()
 {
-    ifstream is(R"(C:\Users\Pepa Bobek\Desktop\advent2021\05\input.txt)");
+    ifstream is("input.txt");
     input_t input;
     string line;
     int index;
