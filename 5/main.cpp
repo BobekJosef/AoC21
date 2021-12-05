@@ -13,11 +13,11 @@ int Star1(const input_t& input)
 {
     bool floor[1000][1000];
     for(auto & i : floor)
-        for(bool j : i)
+        for(bool & j : i)
             j=false;
     bool overlap[1000][1000];
     for(auto & i : overlap)
-        for(bool j : i)
+        for(bool & j : i)
             j=false;
     int result=0;
 
@@ -66,11 +66,11 @@ int Star2(const input_t& input)
 {
     bool floor[1000][1000];
     for(auto & i : floor)
-        for(bool j : i)
+        for(bool & j : i)
             j=false;
     bool overlap[1000][1000];
     for(auto & i : overlap)
-        for(bool j : i)
+        for(bool & j : i)
             j=false;
     int result=0;
 
@@ -168,7 +168,7 @@ int main()
         }
         input.push_back(tuple<int, int, int, int>(in[0], in[1], in[2], in[3]));
     }
-    cout<<"First star:"<<Star1(input)<<endl;
-    cout<<"Second star:"<<Star2(input)<<endl;
+    cout<<"First star:" << Star1(input) << endl;
+    cout<<"Second star:" << Star2(input) << endl;
     return 0;
 }
