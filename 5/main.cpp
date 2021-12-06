@@ -154,21 +154,16 @@ int main()
     ifstream is("input.txt");
     input_t input;
     string line;
-    int index;
     int in[4];
     while(getline(is,line))
     {
         stringstream ss(line);
-        index=0;
-        for (int i; ss >> i; index++)
-        {
-            in[index]=i;
-            if (ss.peek() == ',')
-                ss.ignore();
-        }
+        ss >> in[0];ss.ignore();ss >> in[1];
+        ss.ignore();ss.ignore();ss.ignore();
+        ss >> in[2];ss.ignore();ss >> in[3];
         input.push_back(tuple<int, int, int, int>(in[0], in[1], in[2], in[3]));
     }
-    cout<<"First star:" << Star1(input) << endl;
-    cout<<"Second star:" << Star2(input) << endl;
+    cout<<"First star:"<<Star1(input)<<endl;
+    cout<<"Second star:"<<Star2(input)<<endl;
     return 0;
 }
